@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 
 });
-$('.sidebar-inner').css("height", ($('.article').height() - 135));
+$('.sidebar-inner').css("height", ($('.article').height() - 115));
 $(window).resize(function() {
-  $('.sidebar-inner').css("height", ($('.article').height() - 135));
+  $('.sidebar-inner').css("height", ($('.article').height() - 115));
 });
