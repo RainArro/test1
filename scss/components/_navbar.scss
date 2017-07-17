@@ -1,0 +1,81 @@
+#top-bar {
+  margin-top: 10px;
+
+  .logo {
+    padding: 5px;
+  }
+
+  .form-inline {
+    margin-top: 28px;
+  }
+}
+
+.navbar-default {
+  border: 0;
+}
+
+.collapsing {
+  @include transition(.3s ease);
+}
+
+.navbar-toggle {
+  margin: 35px 15px 35px 0;
+  @include burger($main-color);
+}
+
+.navbar-nav {
+  li {
+    a {
+      font-family: $main-font;
+      font-size: 18px;
+      text-transform: uppercase;
+      line-height: normal;
+    }
+
+    &.active a {
+      font-weight: 500;
+    }
+  }
+}
+
+.search-form {
+  .form-control {
+    border-radius: 0;
+    border-left: 0;
+    padding: 0;
+    height: 23px;
+    @include box-shadow(none);
+
+    &:focus {
+      @include box-shadow(none);
+      border-color: $grey;
+    }
+  }
+
+  &.focus {
+    .form-control,
+    .input-group-addon {
+      border-color: $main-color;
+    }
+  }
+
+  .icon-search {
+    color: $grey;
+    line-height: 19px;
+  }
+
+  .input-group-addon {
+    line-height: normal;
+    border: 1px solid $grey;
+    border-right: 0;
+    background-color: $white;
+    border-radius: 0;
+  }
+
+  .btn {
+    border: 0;
+    border-radius: 0;
+    height: 23px;
+    padding: 0 12px;
+  }
+}

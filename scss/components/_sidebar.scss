@@ -1,0 +1,53 @@
+#sidebar {
+  .sub-header a {
+    background-color: $main-color;
+
+    &:after {
+      border-top-color: $main-color;
+    }
+  }
+
+  .sidebar-down,
+  .sidebar-up {
+    padding: 3px 0;
+    background-color: $sub-header-bg;
+
+    span {
+      color: $white;
+      font-size: 23px;
+      vertical-align: middle;
+    }
+  }
+
+  .sidebar-up {
+    border-radius: 5px 5px 0 0;
+  }
+
+  .sidebar-down {
+    border-radius: 0 0 5px 5px;
+  }
+
+  .sidebar-inner {
+    padding: 10px 20px;
+    background-color: $product-bg;
+    overflow-y: auto;
+
+    ul {
+      margin: 0;
+
+      li {
+        margin: 5px 0;
+      }
+    }
+
+    a {
+      font-size: 12px;
+      padding: 4px 0;
+      color: $text-color;
+
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+
+.carousel-inner {
+  max-height: 600px;
+}
+
+.icon-chevron-left,
+.icon-chevron-right {
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  z-index: 5;
+}
+
+.icon-chevron-right {
+  right: 30%;
+}
+
+.icon-chevron-left {
+  left: 30%;
+}
+//sub-header
+
+.sub-header {
+  text-align: center;
+  margin: 20px 0;
+
+  &.active {
+    a {
+      background-color: $main-color;
+
+      &:after {
+        border-top-color: $main-color;
+      }
+    }
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  a {
+    color: $white;
+    background-color: $sub-header-bg;
+    padding: 10px;
+    position: relative;
+    display: block;
+    font-size: 16px;
+    text-transform: uppercase;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid $sub-header-bg;
+    }
+
+    &:focus,
+    &:hover {
+      background-color: $main-color;
+
+      &:after {
+        border-top-color: $main-color;
+      }
+    }
+  }
+}
+
+.content {
+  border: 1px solid $grey;
+}

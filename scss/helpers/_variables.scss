@@ -1,0 +1,29 @@
+//fonts
+$main-font: 'Oswald', sans-serif;
+$headings-font-family: $main-font;
+//colors
+$main-color: #f8991c;
+$brand-primary: $main-color !default;
+$white: #fff;
+$grey: #d3d3d3;
+$dark-grey: darken( $grey, 30% );
+$collapse-bg: #e3e5e5;
+$sub-header-bg: #666767;
+$text-color: #666;
+$product-bg: #e6e6e6;
+ //
+$brand-success: #5cb85c !default;
+$brand-info: #5bc0de !default;
+$brand-warning: #f0ad4e !default;
+$brand-danger: #d9534f !default;
+//navbar
+$navbar-height: 43px !default;
+$navbar-default-bg: transparent;
+$navbar-border-radius: 0;
+$navbar-default-link-color: $main-color !default;
+$navbar-default-link-active-color: $main-color !default;
+$navbar-default-link-hover-color: $main-color !default;
+// Navbar toggle
+$navbar-default-toggle-hover-bg: transparent !default;
+$navbar-default-toggle-icon-bar-bg: transparent!default;
+$navbar-default-toggle-border-color: transparent !default;

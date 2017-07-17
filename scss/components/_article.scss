@@ -1,0 +1,39 @@
+.product-list {
+  @include clearfix();
+  background-color: $product-bg;
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product {
+  background-color: $white;
+  border: 5px solid $product-bg;
+  height: 165px;
+  overflow: hidden;
+  width: 20%;
+  float: left;
+
+  a {
+    display: block;
+    height: 100%;
+
+    &:hover {
+      p,
+      span {
+        color: $main-color;
+      }
+    }
+  }
+
+  .title {
+    padding: 10px 5px;
+    min-height: 65px;
+
+    p,
+    span {
+      font-size: 13px;
+      color: $text-color;
+    }
+  }
+}

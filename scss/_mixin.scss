@@ -1,0 +1,122 @@
+@mixin box-shadow($box-shadow...) {
+    -moz-box-shadow:    $box-shadow;
+    -webkit-box-shadow: $box-shadow;
+    box-shadow: $box-shadow;
+}
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+@mixin transform($transform...) {
+    -moz-transform:    $transform;
+    -webkit-transform: $transform;
+    transform:         $transform;
+}
+
+@mixin btn-scrolltop($width,$height,$bg,$tfmValue:null,$tfmValue1:null) {
+  width: $width;
+  height: $height;
+  background-color: $bg;
+  border-radius: 50%;
+  cursor: pointer;
+  @include box-shadow(0 3px 10px rgba(0, 0, 0, 0.5));
+  @include transition(all 0.5s ease);
+  @if $tfmValue != null {
+    @include transform($tfmValue);
+    &.pop-in {
+      @include transform($tfmValue1);
+    }
+  }
+  &:hover {
+    @include box-shadow(0 7px 15px rgba(0,0,0,.35));
+
+
+  }
+}
+@mixin burger($bg) {
+
+  width: 30px;
+  height: 22px;
+  position: relative;
+  @include transform(rotate(0deg));
+  @include transition(.3s ease);
+  cursor: pointer;
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: $bg;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    @include transform(rotate(0deg));
+    @include transition(.3s ease);
+  }
+  span:nth-child(1) {
+    top: 0px;
+  }
+  span:nth-child(2), span:nth-child(3) {
+    top: 9px;
+  }
+  span:nth-child(4) {
+    top: 18px;
+  }
+
+  &.open {
+    span:nth-child(1) {
+      top: 9px;
+      width: 0%;
+      left: 50%;
+    }
+    span:nth-child(2) {
+      @include transform(rotate(45deg));
+    }
+    span:nth-child(3) {
+      @include transform(rotate(-45deg));
+    }
+    span:nth-child(4) {
+      top: 9px;
+      width: 0%;
+      left: 50%;
+    }
+  }
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 10px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// Setup the function in your functions or helpers files, wherever you keep these bits.
+@function headings($from:1, $to:6) {
+    @if $from == $to {
+        @return 'h#{$from}';
+    } @else {
+        @return 'h#{$from},' + headings($from+1, $to);
+    }
+}
+
+/*
+#{headings(1,6)} {
+  color: white;
+}
+*/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
