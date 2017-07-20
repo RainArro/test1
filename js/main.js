@@ -13,9 +13,9 @@ $(document).ready(function() {
     $(this).parent().removeClass("focus")
   });
 
-
+$('.sidebar-inner').css("height", ($('.article').height() - 120));
 });
-$('.sidebar-inner').css("height", ($('.article').height() - 115));
+
 $(window).resize(function() {
-  $('.sidebar-inner').css("height", ($('.article').height() - 115));
+  $('.sidebar-inner').css("height", ($('.article').height() - 120));
 });
